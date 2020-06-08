@@ -6,6 +6,7 @@ public class Operation {
     private Integer secondOperand;
     private Double result;
     private OperationType operationType;
+    private Boolean arabicNumber;
 
     public Integer getFirstOperand() {
         return firstOperand;
@@ -37,5 +38,13 @@ public class Operation {
 
     public void setOperationType(OperationType operationType) {
         this.operationType = operationType;
+    }
+
+    public Boolean isArabicNumber() {
+        return arabicNumber;
+    }
+
+    public void setArabicNumber(Boolean arabicNumber) {
+        this.arabicNumber = arabicNumber;
     }
 }

@@ -37,10 +37,12 @@ public class Calculator {
             number = new ArabicNumber();
             op.setFirstOperand(number.convertToNumber(input, 0, endIndex));
             op.setSecondOperand(number.convertToNumber(input, startIndex, input.length()));
+            op.setArabicNumber(true);
         } catch (NumberFormatException e1) {
             number = new RomanNumber();
             op.setFirstOperand(number.convertToNumber(input, 0, endIndex));
             op.setSecondOperand(number.convertToNumber(input, startIndex, input.length()));
+            op.setArabicNumber(false);
         }
     }
 

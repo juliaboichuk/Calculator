@@ -1,7 +1,11 @@
 package calculator;
 
 import calculator.handler.Calculator;
+import calculator.handler.RomanNumber;
+import calculator.model.Number;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Scanner;
 
 import static java.lang.System.exit;
@@ -26,7 +30,13 @@ public class Main {
         }
 
         System.out.println("Output:");
-        System.out.println(calc.getOp().getResult());
+        if (calc.getOp().isArabicNumber()) {
+            System.out.println(BigDecimal.valueOf(calc.getOp().getResult()).setScale(1, RoundingMode.CEILING).doubleValue());
+        } else {
+            RomanNumber result = new RomanNumber();
+            System.out.println(result.convertToRomanNumber(calc.getOp().getResult()));
+        }
+
         in.close();
     }
 }
