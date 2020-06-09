@@ -31,7 +31,7 @@ public class Main {
 
         System.out.println("Output:");
         if (calc.getOp().isArabicNumber()) {
-            System.out.println(BigDecimal.valueOf(calc.getOp().getResult()).setScale(1, RoundingMode.CEILING).doubleValue());
+            System.out.println(calc.getOp().getResult());
         } else {
             RomanNumber result = new RomanNumber();
             System.out.println(result.convertToRomanNumber(calc.getOp().getResult()));
